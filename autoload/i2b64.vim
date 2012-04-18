@@ -3,6 +3,10 @@
 "VERSION:  0.9
 "LICENSE:  MIT
 
+if !exists("g:image2base64_comment")
+    let g:image2base64_comment = 1
+endif
+
 function! i2b64#Encode(file)
     let e = a:file
     let tail = fnamemodify(e, ':e')
