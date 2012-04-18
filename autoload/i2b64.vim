@@ -3,6 +3,9 @@
 "VERSION:  0.9
 "LICENSE:  MIT
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 if !exists("g:image2base64_comment")
     let g:image2base64_comment = 1
 endif
@@ -107,3 +110,5 @@ function! i2b64#Exe()
         let res = i2b64#EncodeHTML()
     endif
 endfunction
+
+let &cpo = s:save_cpo
