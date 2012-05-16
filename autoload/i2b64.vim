@@ -20,7 +20,7 @@ function! i2b64#Encode(file)
 
     if filereadable(e)
         if tail == 'png' || tail == 'gif' || tail == 'jpg'
-            let e = 'data:image/'.tail.';base64,'.join(split(system('openssl base64 -in '.e), "\n"),'')
+            let e = 'data:image/'.tail.';base64,'.join(split(system('openssl base64 -in '.e), '\n'),'')
         endif
     else
         echo 'file not found.'
